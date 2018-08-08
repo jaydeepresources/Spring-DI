@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="pointA" class="containment.Point">
+		<property name="x" value="0"></property>
+		<property name="y" value="0"></property>
+	</bean>
+	
+	<bean id="pointB" class="containment.Point">
+		<property name="x" value="10"></property>
+		<property name="y" value="10"></property>
+	</bean>
+	
+	<bean id="pointC" class="containment.Point">
+		<property name="x" value="5"></property>
+		<property name="y" value="5"></property>
+	</bean>
+
+	<bean id="pointTriangle" class="containment.PointTriangle">
+
+		<property name="type" value="Scalene"></property>
+
+		<property name="points">
+			<map>
+				<entry key="1" value-ref="pointA"></entry>
+				<entry key="2" value-ref="pointB"></entry>
+				<entry key="3" value-ref="pointC"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

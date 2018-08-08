@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="a" class="com.ClassA">
+		<property name="str" value="abc"></property>
+	</bean>
+
+	<bean id="sample" class="com.SampleClass" >
+		<property name="a" ref="a"></property>
+	</bean>
+
+	<bean id="anotherSample" class="com.SampleClass" lazy-init="true">
+		<property name="a" ref="a"></property>
+	</bean>
+
+</beans>
